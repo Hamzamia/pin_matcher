@@ -20,25 +20,50 @@ function generatePin() {
     console.log(pin);
 }
 
-//uodate calculator
+// uodate calculator
+
+// document.getElementById('keypad').addEventListener('click', function (event) {
+//     const number = event.target.innerText;
+//     const CalcInput = document.getElementById('typed-numbers');
+//     if (isNaN(number)) {
+//         if (number == 'C') {
+//             CalcInput.value = '';
+//         }
+//     }
+//     else {
+
+//         const PreviousNumber = CalcInput.value;
+//         const newNumber = PreviousNumber + number;
+//         CalcInput.value = newNumber;
+//     }
+
+// })
+
+
 
 document.getElementById('keypad').addEventListener('click', function (event) {
+    // console.log("any key clicked")
     const number = event.target.innerText;
-    const CalcInput = document.getElementById('typed-numbers');
+    // console.log(event.target.innerText);
+    const calcInput = document.getElementById('typed-numbers');
+
     if (isNaN(number)) {
         if (number == 'C') {
-            CalcInput.value = '';
+            calcInput.value = '';
         }
+        // console.log(number);
     }
     else {
 
-        const PreviousNumber = CalcInput.value;
-        const newNumber = PreviousNumber + number;
-        CalcInput.value = newNumber;
+        const previousNumber = calcInput.value;
+        const newNumber = previousNumber + number;
+        calcInput.value = newNumber;
+
     }
 
-})
 
+    // NumberInput.value = number;
+    // const newNumber = NumberInput + number;
+    // NumberInput.value = newNumber;
 
-
-
+});
