@@ -17,7 +17,7 @@ function generatePin() {
 
     const pin = getPin();
     document.getElementById('display-pin').value = pin;
-    console.log(pin);
+    // console.log(pin);
 }
 
 // uodate calculator
@@ -67,3 +67,28 @@ document.getElementById('keypad').addEventListener('click', function (event) {
     // NumberInput.value = newNumber;
 
 });
+
+//pin verify
+
+function verifyPin() {
+    // console.log("verify submit btn")
+    const pin = document.getElementById('display-pin').value;
+    const typedNumber = document.getElementById('typed-numbers').value;
+    const successNotification = document.getElementById('notify-success');
+    const failNotification = document.getElementById('notify-fail');
+
+    if (pin == typedNumber) {
+        // console.log('yeyh, pin matched')
+
+
+        successNotification.style.display = 'block';
+        failNotification.style.display = 'none';
+    }
+    else {
+        // console.log("opps! pin not matchd")
+
+        successNotification.style.display = 'none';
+        failNotification.style.display = 'block';
+
+    }
+}
